@@ -1,2 +1,2 @@
 # updater-tool
-Use at your discretion
+Update your Python directories with pip
