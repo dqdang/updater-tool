@@ -4,6 +4,7 @@ import shlex
 import subprocess
 import sys
 
+
 def update(path):
     for root, directory, files in os.walk(path):
         for name in files:
@@ -24,8 +25,10 @@ def update(path):
                 finally:
                     continue
 
+
 def main():
     update(sys.argv[1])
+
 
 if __name__ == "__main__":
     main()
