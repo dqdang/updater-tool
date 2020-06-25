@@ -23,11 +23,16 @@ def update(path):
                 except Exception as e:
                     print("Failed to install requirements for {}".format(root))
                 finally:
+                    print()
                     continue
 
 
 def main():
-    update(sys.argv[1])
+    if len(sys.argv) > 2:
+        update(sys.argv[1])
+    else:
+        print("Defaulting to outside directory.")
+        update("../")
 
 
 if __name__ == "__main__":
