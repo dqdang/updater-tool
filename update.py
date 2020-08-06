@@ -14,7 +14,7 @@ def update(path):
             if "requirements.txt" in name:
                 os.chdir(os.path.dirname(name))
                 if platform.system() == "Windows":
-                    cmd = "python -m pip install -r requirements.txt"
+                    cmd = "python -m pip install -r requirements.txt --use-feature=2020-resolver"
                 else:
                     cmd = "pip install -r requirements.txt"
                 print(os.path.dirname(name))
