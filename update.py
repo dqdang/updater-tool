@@ -9,8 +9,6 @@ def update(path):
     for root, directory, files in os.walk(path):
         for name in files:
             name = os.path.join(root, name)
-            # if "dropbot" in name:
-            #     continue
             if "requirements.txt" in name:
                 os.chdir(os.path.dirname(name))
                 if platform.system() == "Windows":
