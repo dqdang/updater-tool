@@ -27,7 +27,7 @@ def update(path):
 
 def main():
     if len(sys.argv) > 2:
-        print("Updating passed in directory.")
+        print("Updating {}.".format(sys.argv[1]))
         update(sys.argv[1])
     else:
         print("Defaulting to parent directory to update all sibling directories.")
