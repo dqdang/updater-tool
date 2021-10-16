@@ -32,6 +32,7 @@ def install_packages(new_python_path, list_of_packages):
         try:
             success = subprocess.call(cmd)
         except KeyboardInterrupt:
+            failed_installations.append(package)
             continue
         if success != 0:
             print("Failed to install {}".format(package))
