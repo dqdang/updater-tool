@@ -29,8 +29,11 @@ def install_packages(new_python_path, list_of_packages):
     failed_installations = []
     for package in list_of_packages:
         cmd = [new_python_path, "-m", "pip", "install", package]
-        success = subprocess.call(cmd)
-        if not success:
+        try:
+            success = subprocess.call(cmd)
+        except KeyboardInterrupt:
+            continue
+        if success != 0:
             print("Failed to install {}".format(package))
             failed_installations.append(package)
     return failed_installations
